@@ -1,0 +1,41 @@
+{% extends 'base/student.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/student_messages.css' %}">
+{% endblock %}
+
+{% block student_content %}
+
+<div class="messages-container">
+
+    <h2>Inbox</h2>
+
+    <table class="messages-table">
+
+        <tr>
+            <th>From</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+
+        {% for m in msgs %}
+        <tr>
+            <td>{{ m.sender.username }}</td>
+            <td>{{ m.content }}</td>
+            <td>{{ m.timestamp }}</td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="3" class="no-msg">
+                No messages
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

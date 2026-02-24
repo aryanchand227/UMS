@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    min-height: 100vh;
+}
+
+/* Container */
+
+.points-container {
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.points-container h2 {
+    color: #dd2476;
+}
+
+/* Table */
+
+.points-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.points-table th {
+    background: #dd2476;
+    color: white;
+    padding: 10px;
+}
+
+.points-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Inputs */
+
+.points-table input {
+    width: 60px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #dd2476;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit-btn:hover {
+    background: #ff512f;
+}

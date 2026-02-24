@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <h2>Login</h2>
+
+    <form method="POST" class="auth-form">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Username">
+
+        <input type="password" name="password" placeholder="Password">
+
+        <button type="submit">
+            Login
+        </button>
+    </form>
+
+    <p>
+        New user?
+        <a href="/register/student/">Register as Student</a>
+        <br>
+        <a href="/register/teacher/">Register as Teacher</a>
+    </p>
+
+</div>
+
+{% endblock %}

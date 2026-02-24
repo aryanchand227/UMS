@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<nav class="navbar student-nav">
+
+    <h2>Student Panel</h2>
+
+    <a href="/student/dashboard/">Dashboard</a>
+    <a href="/student/attendance/">Attendance</a>
+    <a href="/student/timetable/">Timetable</a>
+    <a href="/student/messages/">Messages</a>
+    <a href="/student/cgpa/">CGPA</a>
+    <a href="/student/courses/">Courses</a>
+    <a href="/logout/">Logout</a>
+
+</nav>
+
+<div class="content-area">
+
+    {% block student_content %}
+    {% endblock %}
+
+</div>
+
+{% endblock %}

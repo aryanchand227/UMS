@@ -1,0 +1,66 @@
+{% extends 'base/teacher.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/teacher_timetable.css' %}">
+{% endblock %}
+
+{% block teacher_content %}
+
+<div class="timetable-container">
+
+    <h2>Schedule Timetable</h2>
+
+    <!-- Success Message -->
+    {% if messages %}
+    {% for m in messages %}
+    <p class="success-msg">{{ m }}</p>
+    {% endfor %}
+    {% endif %}
+
+    <form method="POST" class="timetable-form">
+        {% csrf_token %}
+
+        <label>Day</label>
+        <select name="day">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+        </select>
+
+        <label>Subject</label>
+        <input name="subject" placeholder="Enter subject">
+
+        <label>Time</label>
+        <input name="time" placeholder="10:00 - 11:00">
+
+        <button type="submit">Add</button>
+    </form>
+
+    <hr>
+
+    <h3>My Timetable</h3>
+
+    <table class="timetable-table">
+
+        <tr>
+            <th>Day</th>
+            <th>Subject</th>
+            <th>Time</th>
+        </tr>
+
+        {% for t in table %}
+        <tr>
+            <td>{{ t.day }}</td>
+            <td>{{ t.subject }}</td>
+            <td>{{ t.time }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

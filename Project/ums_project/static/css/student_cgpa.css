@@ -1,0 +1,46 @@
+/* Background */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    min-height: 100vh;
+}
+
+/* Container */
+
+.cgpa-container {
+    width: 400px;
+    margin: 80px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+
+.cgpa-container h2 {
+    color: #f7971e;
+    margin-bottom: 25px;
+}
+
+/* CGPA Box */
+
+.cgpa-box {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    background: #ffd200;
+    padding: 20px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* No CGPA */
+
+.no-cgpa {
+    color: red;
+    font-weight: bold;
+}

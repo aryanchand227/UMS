@@ -1,0 +1,43 @@
+{% extends 'base/teacher.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/teacher_points.css' %}">
+{% endblock %}
+
+{% block teacher_content %}
+
+<div class="points-container">
+
+    <h2>Upload Points — {{ subject.name }}</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <table class="points-table">
+
+            <tr>
+                <th>Student</th>
+                <th>Points (1–10)</th>
+            </tr>
+
+            {% for s in students %}
+            <tr>
+                <td>{{ s.username }}</td>
+                <td>
+                    <input type="number" name="{{ s.id }}" min="1" max="10" required>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <button type="submit" class="submit-btn">
+            Submit Points
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

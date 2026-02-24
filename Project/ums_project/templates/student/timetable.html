@@ -1,0 +1,36 @@
+{% extends 'base/student.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/student_timetable.css' %}">
+{% endblock %}
+
+{% block student_content %}
+
+<div class="timetable-container">
+
+    <h2>Class Timetable</h2>
+
+    <table class="timetable-table">
+
+        <tr>
+            <th>Day</th>
+            <th>Subject</th>
+            <th>Time</th>
+            <th>Faculty</th>
+        </tr>
+
+        {% for t in table %}
+        <tr>
+            <td>{{ t.day }}</td>
+            <td>{{ t.subject }}</td>
+            <td>{{ t.time }}</td>
+            <td>{{ t.teacher.username }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

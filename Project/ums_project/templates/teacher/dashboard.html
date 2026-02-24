@@ -1,0 +1,42 @@
+{% extends 'base/teacher.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/teacher_dashboard.css' %}">
+{% endblock %}
+
+{% block teacher_content %}
+
+<div class="teacher-dashboard-container">
+
+    <h2>Welcome to the Teacher Dashboard</h2>
+
+    <ul class="teacher-menu">
+        <li>
+            <a href="/teacher/attendance/">
+                Mark Attendance
+            </a>
+        </li>
+
+        <li>
+            <a href="/teacher/timetable/">
+                Timetable
+            </a>
+        </li>
+
+        <li>
+            <a href="/teacher/messages/">
+                Messages
+            </a>
+        </li>
+
+        <li>
+            <a href="/teacher/grades/">
+                CGPA Upload
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+{% endblock %}

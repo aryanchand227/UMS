@@ -1,0 +1,18 @@
+{% extends 'base/student.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/student_cgpa.css' %}">
+{% endblock %}
+
+{% block student_content %}
+
+<h2>Your CGPA</h2>
+
+{% if cgpa %}
+<h1>{{ cgpa }}</h1>
+{% else %}
+<p>Points not uploaded yet.</p>
+{% endif %}
+
+{% endblock %}

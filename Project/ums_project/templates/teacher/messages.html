@@ -1,0 +1,46 @@
+{% extends 'base/teacher.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/teacher_messages.css' %}">
+{% endblock %}
+
+{% block teacher_content %}
+
+<div class="message-container">
+
+    <h2>Send Message</h2>
+
+    {% if messages %}
+    {% for m in messages %}
+    <p class="success-msg">{{ m }}</p>
+    {% endfor %}
+    {% endif %}
+
+    <form method="POST" class="message-form">
+        {% csrf_token %}
+
+        <label>Select Student</label>
+
+        <select name="student">
+            <option value="">All Students</option>
+            {% for s in students %}
+            <option value="{{ s.id }}">
+                {{ s.username }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <label>Message</label>
+
+        <textarea name="content" rows="4" placeholder="Enter message" required></textarea>
+
+        <button type="submit" class="send-btn">
+            Send Message
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

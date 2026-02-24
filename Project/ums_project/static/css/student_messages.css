@@ -1,0 +1,58 @@
+/* Background */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    min-height: 100vh;
+}
+
+/* Container */
+
+.messages-container {
+    width: 750px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+
+.messages-container h2 {
+    margin-bottom: 20px;
+    color: #dd2476;
+}
+
+/* Table */
+
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.messages-table th {
+    background: #dd2476;
+    color: white;
+    padding: 12px;
+}
+
+.messages-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Empty Message */
+
+.no-msg {
+    color: red;
+    font-weight: bold;
+}
+
+/* Hover */
+
+.messages-table tr:hover {
+    background: #f5f5f5;
+}

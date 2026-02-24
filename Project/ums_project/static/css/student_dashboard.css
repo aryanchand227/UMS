@@ -1,0 +1,55 @@
+/* Background */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    min-height: 100vh;
+}
+
+/* Container */
+
+.dashboard-container {
+    background: white;
+    width: 350px;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+
+.dashboard-container h2 {
+    color: #0072ff;
+    margin-bottom: 25px;
+}
+
+/* Menu */
+
+.dashboard-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-menu li {
+    margin: 12px 0;
+}
+
+/* Links */
+
+.dashboard-menu a {
+    text-decoration: none;
+    background: #0072ff;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: .3s;
+}
+
+.dashboard-menu a:hover {
+    background: #00c6ff;
+    transform: scale(1.05);
+}

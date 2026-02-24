@@ -1,0 +1,24 @@
+{% extends 'base/student.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/student_dashboard.css' %}">
+{% endblock %}
+
+{% block student_content %}
+
+<div class="dashboard-container">
+
+    <h2>Welcome to the Student Dashboard</h2>
+
+    <ul class="dashboard-menu">
+        <li><a href="/student/attendance/">Attendance</a></li>
+        <li><a href="/student/timetable/">Timetable</a></li>
+        <li><a href="/student/messages/">Messages</a></li>
+        <li><a href="/student/cgpa/">CGPA</a></li>
+        <li><a href="/student/courses/">Courses</a></li>
+    </ul>
+
+</div>
+
+{% endblock %}

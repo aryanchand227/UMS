@@ -1,0 +1,43 @@
+/* Page background default */
+
+body {
+    margin: 0;
+    font-family: Segoe UI, sans-serif;
+}
+
+/* Navbar */
+
+.teacher-nav {
+    display: flex;
+    gap: 18px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: black;
+    align-items: center;
+}
+
+.teacher-nav h2 {
+    margin-right: auto;
+}
+
+/* Links */
+
+.teacher-nav a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.teacher-nav a:hover {
+    background: #ff9800;
+    color: white;
+}
+
+/* Content */
+
+.content-area {
+    padding: 30px;
+}

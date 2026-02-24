@@ -1,0 +1,28 @@
+{% extends 'base/student.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/student_courses.css' %}">
+{% endblock %}
+
+{% block student_content %}
+
+<div class="courses-container">
+
+    <h2>Semester {{ sem }} Courses</h2>
+
+    <ul class="course-list">
+        {% for s in subjects %}  
+        <li class="course-item">
+            {{ s.name }}
+        </li>
+        {% empty %}
+        <li class="no-course">
+            No courses available
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+{% endblock %}

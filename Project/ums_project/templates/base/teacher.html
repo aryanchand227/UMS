@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<nav class="navbar teacher-nav">
+
+    <h2>Teacher Panel</h2>
+
+    <a href="/teacher/dashboard/">Dashboard</a>
+    <a href="/teacher/attendance/">Attendance</a>
+    <a href="/teacher/timetable/">Timetable</a>
+    <a href="/teacher/messages/">Messages</a>
+    <a href="/teacher/points/">Upload points</a>
+    <a href="/logout/">Logout</a>
+
+</nav>
+
+<div class="content-area">
+
+    {% block teacher_content %}
+    {% endblock %}
+
+</div>
+
+{% endblock %}

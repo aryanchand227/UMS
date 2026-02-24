@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/register_student.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="register-container">
+
+    <h2>Student Registration</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Username" required>
+
+        <input type="password" name="password" placeholder="Password" required>
+
+        <input type="text" name="reg_no" placeholder="Registration Number" required>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <p>
+        Already have account?
+        <a href="/">Login</a>
+    </p>
+
+</div>
+
+{% endblock %}

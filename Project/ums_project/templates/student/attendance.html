@@ -1,0 +1,95 @@
+{% extends 'base/student.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/attendance.css' %}">
+{% endblock %}
+
+{% block student_content %}
+
+<div class="attendance-container">
+
+    <h2>Attendance Record</h2>
+
+    <!-- Detailed Records -->
+
+    <table class="attendance-table">
+
+        <tr>
+            <th>Date</th>
+            <th>Subject</th>
+            <th>Status</th>
+        </tr>
+
+        {% for r in records %}
+        <tr>
+            <td>{{ r.date }}</td>
+
+            <td>{{ r.subject.name }}</td>
+
+            <td>
+                {% if r.present %}
+                <span class="present">Present</span>
+                {% else %}
+                <span class="absent">Absent</span>
+                {% endif %}
+            </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="3">No attendance records</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <!-- Subject-wise Summary -->
+
+    <div class="summary">
+
+        <h3>Subject-wise Attendance</h3>
+
+        <table class="attendance-table">
+
+            <tr>
+                <th>Subject</th>
+                <th>Present</th>
+                <th>Total</th>
+                <th>%</th>
+            </tr>
+
+            {% for s in subjects %}
+            <tr>
+                <td>{{ s.subject__name }}</td>
+                <td>{{ s.present }}</td>
+                <td>{{ s.total }}</td>
+
+                <td>
+                    {{ s.present|floatformat:0 }}
+                    /
+                    {{ s.total }}
+                </td>
+            </tr>
+
+            {% empty %}
+            <tr>
+                <td colspan="4">
+                    No subject attendance yet
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <!-- Aggregate -->
+
+        <p>Total Classes: <b>{{ total }}</b></p>
+        <p>Present: <b>{{ present }}</b></p>
+        <p>Attendance: <b>{{ percent|floatformat:2 }}%</b></p>
+
+    </div>
+
+</div>
+
+{% endblock %}

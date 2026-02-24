@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/register_teacher.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="register-container">
+
+    <h2>Teacher Registration</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Username" required>
+
+        <input type="password" name="password" placeholder="Password" required>
+
+        <input type="text" name="reg_no" placeholder="Registration Number" required>
+
+        <label>Select Subject</label>
+
+        <select name="subject" required>
+            {% for sub in subjects %}
+            <option value="{{ sub.id }}">
+                {{ sub.name }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <p>
+        Already have account?
+        <a href="/">Login</a>
+    </p>
+
+</div>
+
+{% endblock %}
